@@ -7,10 +7,12 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import * as AuthenticationSlice from "../redux/auth.slice"
 import axios from 'axios'
+import TopCorner  from '../components/modal'
 
 export default function Home() {
   const [name, setName] = useState('')
   const [apiData, setApiData] = useState([])
+  const [showModal, setShowModal]  = useState(false)
   const dispatch = useDispatch()
   const token = useSelector(AuthenticationSlice.getName)
 
@@ -32,6 +34,15 @@ export default function Home() {
     e.preventDefault();
     dispatch(AuthenticationSlice.setName(name))
   }
+
+  const open = () => {
+    setShowModal(true)
+  }
+
+  const close = () => {
+    setShowModal(false)
+  }
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -40,14 +51,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      
-     
-
+     <button onClick={open}>CLick me</button>
+      {showModal && <TopCorner cross={close}/>}
       <Form onSubmit={formSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="text" placeholder="Enter email" onChange={(e) => setName(e.target.value)} />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+             never share your email with anyone else.
           </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
