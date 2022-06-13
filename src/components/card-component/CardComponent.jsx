@@ -1,21 +1,19 @@
-import React , {useState} from 'react'
-import styles from './card.module.css'
-import { useDispatch, useSelector } from 'react-redux';
-import * as AuthenticationSlice from "../../redux/auth.slice"
-import { ToastContainer, toast } from 'react-toastify';
-import TopCorner from '../../components/modal'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+
+import * as AuthenticationSlice from "../../redux/cart.slice"
+import Cart from '../cart'
+
+import styles from './style.module.css'
+
 
 const CardComponent = ({ item }) => {
     const [showModal, setShowModal] = useState(false)
     const dispatch = useDispatch()
 
-    setTimeout(() => {
+    const close = () => {
         setShowModal(false)
-    }, 5000)
-    
-      const close = () => {
-        setShowModal(false)
-      }
+    }
 
     const addToCart = (item) => {
         setShowModal(true)
@@ -24,10 +22,10 @@ const CardComponent = ({ item }) => {
 
     return (
         <>
-        {showModal && <TopCorner cross={close} />}
+            {showModal && <Cart cross={close} />}
             <div className="col-sm-4" style={{ marginTop: '10px' }}>
                 <div className="card">
-                    <img className="card-img-top" src={`https://electronic-ecommerce.herokuapp.com/${item.image}`} alt="Card image cap" />
+                    <img className="card-img-top" src={`https://electronic-ecommerce.herokuapp.com/${item.image}`} height={200} alt="Card image cap" />
                     <div className="card-body">
                         <div className={styles.card_item}>
                             <p className="card-text">{item.name}</p>
@@ -38,7 +36,7 @@ const CardComponent = ({ item }) => {
                             <p className="card-text">{item.category[1]}</p>
                             <p className="card-text">{item.stock}</p>
                         </div>
-                        <button className='col-lg-12  btn btn-primary' onClick={() => addToCart(item)}>Add to Cart</button>
+                        <button className='col-lg-12  btn btn-primary' style={{ backgroundColor: '#4CACBC' }} onClick={() => addToCart(item)}>Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -47,12 +45,3 @@ const CardComponent = ({ item }) => {
 }
 
 export default CardComponent
-
-
-
-
-//    <div classNameName={styles.item_column}>
-//     <h5>{item.name}</h5>
-//     <h5>{item.price}</h5>
-//     <button>Add To Cart</button>
-//    </div>

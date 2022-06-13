@@ -3,7 +3,6 @@
     margin: 10px;
     width: 25%;
     padding: 10px;
-    
 }
 
 .cart{
@@ -25,8 +24,6 @@
     background-color: blue;
      position: absolute;
 }
-
-
 
 .card_item{
     display: flex;

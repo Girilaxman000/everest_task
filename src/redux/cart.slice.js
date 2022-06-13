@@ -1,16 +1,12 @@
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Router from "next/router";
-
-import { AppState } from "./store";
-
+import { createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     cartItems: []
 };
 
 export const slice = createSlice({
-    name: "auth",
+    name: "cart",
     initialState: initialState,
     reducers: { 
         setItem: (state, action) => {
@@ -31,6 +27,6 @@ export const {
 } = slice.actions
 
 
-export const getItem = (state) => state.auth.cartItems
+export const getItem = (state) => state.cart.cartItems
 
 export default slice.reducer

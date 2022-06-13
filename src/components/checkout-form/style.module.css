@@ -1,0 +1,23 @@
+
+.loginForm {
+    padding: 25px;
+    border: 4px solid #6e4363;
+    width: 40%;
+    margin: auto;
+    margin-top: 5px;
+    background-color: #4CACBC;
+  }
+
+  .btn_submit{
+    margin-left: 40%;
+  }
+
+  .form_group{
+    margin: 10px;
+  }
+
+  .checkout{
+    text-align: center;
+  }
+
+  

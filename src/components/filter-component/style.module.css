@@ -1,0 +1,10 @@
+.filter{
+    position: absolute;
+    left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .filter {
+      display: none;
+    }
+  }

@@ -1,0 +1,19 @@
+.modal{
+    border: 2px solid black;
+    position: relative;
+    background-color: #4CACBC;
+}
+
+.icon{
+    position: absolute;
+    right: 3px;
+    top: 3px
+}
+
+.btn_checkout{
+    width: 80%;
+    margin-bottom: 4px;
+    margin-left: 10%;
+    color: #4CACBC;
+    border-radius: 5px;
+}

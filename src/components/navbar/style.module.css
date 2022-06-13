@@ -1,0 +1,12 @@
+.icon{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.cart_length{
+    position: absolute;
+    top: 30px;
+    right: 15px;
+}
