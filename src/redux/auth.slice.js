@@ -6,24 +6,31 @@ import { AppState } from "./store";
 
 
 const initialState = {
-    name: '',
+    cartItems: []
 };
 
 export const slice = createSlice({
     name: "auth",
     initialState: initialState,
     reducers: { 
-        setName: (state, action) => {
-            state.name = action.payload
+        setItem: (state, action) => {
+            const existingIndex = state.cartItems.findIndex(
+                (item) => item.id === action.payload.id
+              );
+            if(existingIndex >= 0){
+               state.cartItems.push()
+            } else{
+                state.cartItems.push(action.payload)
+            }
         },
     },
 })
 
 export const {
-   setName
+    setItem
 } = slice.actions
 
 
-export const getName = (state) => state.auth.name
+export const getItem = (state) => state.auth.cartItems
 
 export default slice.reducer

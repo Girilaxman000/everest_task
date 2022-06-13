@@ -108,6 +108,19 @@
   margin-left: 0.5rem;
 }
 
+.row {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.items{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
