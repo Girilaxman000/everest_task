@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 
@@ -19,13 +20,13 @@ const CardComponent = ({ item }) => {
         setShowModal(true)
         dispatch(AuthenticationSlice.setItem(item))
     }
-
+    
     return (
         <>
             {showModal && <Cart cross={close} />}
             <div className="col-sm-4" style={{ marginTop: '10px' }}>
                 <div className="card">
-                    <img className="card-img-top" src={`https://electronic-ecommerce.herokuapp.com/${item.image}`} height={200} alt="Card image cap" />
+                    <Image className="card-img-top" src={`https://electronic-ecommerce.herokuapp.com/${item.image}`} height={200} width={200} alt="Card image cap" />
                     <div className="card-body">
                         <div className={styles.card_item}>
                             <p className="card-text">{item.name}</p>

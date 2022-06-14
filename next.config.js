@@ -1,10 +1,7 @@
-/** @type {import('next').NextConfig} */
-
-
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
+  images: {
+      domains: ['electronic-ecommerce.herokuapp.com'],
+  },
 }
-
-module.exports =  nextConfig
-
 

@@ -23,13 +23,10 @@ const Cart = (props) => {
         return result
     }).reduce(((total, value) => total + value), 0)
 
-
-
     return (
-        <div style={{ position: 'fixed', top: 0, right: '-13px', width: '30%', zIndex: 1 }}>
-            <div className={styles.modal}>
+        <>
+            <div className={styles.cart}>
             <FontAwesomeIcon icon={faTimesCircle} className={styles.icon} color="white" height={"20px"} onClick={cross} />
-            
                 {
                     items.map(data => <CartComponent key={data.id} item={data} />)
                 }
@@ -40,7 +37,7 @@ const Cart = (props) => {
                 <button className={styles.btn_checkout} onClick={() => router.push('/checkout')}>Add to Cart</button>
             </div>
 
-        </div>
+        </>
     )
 }
 

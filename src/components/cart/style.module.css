@@ -1,7 +1,13 @@
-.modal{
+.cart{
     border: 2px solid black;
     position: relative;
     background-color: #4CACBC;
+    width: 400px;
+    min-width:400px;
+    position: fixed;
+     top: 0;
+     right: 0px;
+       z-index: 1 ;
 }
 
 .icon{
@@ -17,3 +23,4 @@
     color: #4CACBC;
     border-radius: 5px;
 }
+

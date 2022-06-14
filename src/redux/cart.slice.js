@@ -26,7 +26,6 @@ export const {
     setItem
 } = slice.actions
 
-
 export const getItem = (state) => state.cart.cartItems
 
 export default slice.reducer
